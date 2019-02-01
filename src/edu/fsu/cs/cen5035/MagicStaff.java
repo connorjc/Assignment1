@@ -20,7 +20,11 @@ public class MagicStaff extends BasicWeapon implements Weapon {
 
     @Override
     public int hit(int armor) {
-        int critical = (int)(armor*(100-DAMAGE*2)/100.0);
+        /* Critical hit is represented as parabolic curve shifted to a max power
+         * of armor and stretched such that DAMGE > 40 does not recieve a bonus
+         */
+        int critical = (int) Math.ceil(armor*(1-(Math.pow(DAMAGE,2)/15/100.0)));
+        critical = (critical < 0) ? 0 : critical;
         int damage = DAMAGE + critical - armor;
         if (damage < 0) {
             return 0;
