@@ -1,0 +1,88 @@
+a)
+	warning: push.default is unset; its implicit value has changed in
+	Git 2.0 from 'matching' to 'simple'. To squelch this message
+	and maintain the traditional behavior, use:
+
+	  git config --global push.default matching
+
+	To squelch this message and adopt the new behavior now, use:
+
+	  git config --global push.default simple
+
+	When push.default is set to 'matching', git will push local branches
+	to the remote branches that already exist with the same name.
+
+	Since Git 2.0, Git defaults to the more conservative 'simple'
+	behavior, which only pushes the current branch to the corresponding
+	remote branch that 'git pull' uses to update the current branch.
+
+	See 'git help config' and search for 'push.default' for further information.
+	(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+	'current' instead of 'simple' if you sometimes use older versions of Git)
+
+	Username for 'https://github.com': connorjc
+	Password for 'https://connorjc@github.com': 
+	Counting objects: 7, done.
+	Delta compression using up to 8 threads.
+	Compressing objects: 100% (6/6), done.
+	Writing objects: 100% (7/7), 941 bytes | 0 bytes/s, done.
+	Total 7 (delta 1), reused 0 (delta 0)
+	remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+	To https://github.com/connorjc/Assignment1.git
+	   f7a5d56..1a336f7  master -> master
+b)
+	10
+	git rev-list --all --count
+c)
+	Thu, 15 Sep 2016 10:29:34 -0400
+	git log -n 1 --pretty=format:%aD -- .gitignore
+d)
+	1. Branches serve as an abstraction for the edit/stage/commit process.
+	2. Make sure your code changes are verified before delivering them to 
+		other developers.
+e)
+	git log is meant to display all the commits.
+	git status shows information based on your current working tree
+		ex. what is untracked, tracked but not added, commited, etc
+f)
+	git log --follow -- src/edu/fsu/cs/cen5035/Weapon.java
+g)
+	git log --all --grep "file"
+h)
+	I) Inheritance is how objects can inherit attributes from their 
+		parent(s) class(es); moving from abstract concepts to more
+		concrete.
+
+	II) Polymorphism is how a child class can inherit abilities from its
+		parent(s) and override said functions/attributes to suit its
+		needs.
+
+	III) Encapsulation is the ability to combine functions and attributes
+		into a class such that code can be generalized. Encapsulation
+		is used for information-hiding where a class's function can
+		directly manipulate the private attributes that both are 
+		encapsulated in the same class.
+i)
+	"Dictator and Lieutenants" workflow has everyone pulling from the 
+		"blessed" repo. Developers push to their assigned lieutenant's
+		repo. Lieutenants merge code and solve conflicts, pushing to 
+		the dictator's repo. Dictator merges code and solve conflicts, 
+		pushing to the "blessed" repo.
+
+	"Integration management" workflow has each developer maintaining a 
+		public and private repo. Developers pull from the "blessed"
+		repo into their private repo for development. Finished works
+		are pushed to their public repo. Integration manager pulls from
+		each developer's public repo merges code solving conflicts to 
+		then push to the "blessed" repo.
+j)
+	Large teams will benefit more from the "Dictator and Lieutenant" 
+		workflow because there is more quality control over the code
+		that makes it to the shared repo. The middlemen developers 
+		make sure only the most bug/conflict free code is pushed to the
+		shared repo, hence calling it "blessed".
+
+	Centralized workflow will have conflicts and merges continuously 
+		appearing in the shared repo leaving it up to the next 
+		developer to access the repo left with the responsibility
+		of handling any conflicts/bugs.
