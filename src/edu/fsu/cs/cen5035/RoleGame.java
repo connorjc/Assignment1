@@ -2,7 +2,7 @@ package edu.fsu.cs.cen5035;
 
 /**
  *
- * @author Javier
+ * @author Connor Christian
  */
 public class RoleGame {
 
@@ -18,7 +18,10 @@ public class RoleGame {
         System.out.println("Spear has " + weapon.hit() + " of damage.");        
         System.out.println("Spear was able to do " + weapon.hit(armor) + " of damage due to an armor with "+armor+ " points.");
         
-        //TODO: Add the remainig weapons here
+        //TODO: Add the remaining weapons here
+        weapon = WeaponFactory.getWeapon("simple hammer");
+        System.out.println("Simple Hammer has " + weapon.hit() + " of damage.");        
+        System.out.println("Simple Hammer was able to do " + weapon.hit(armor) + " of damage due to an armor with "+armor+ " points.");
 
     }
 }

@@ -2,7 +2,7 @@ package edu.fsu.cs.cen5035;
 
 /**
  *
- * @author Javier
+ * @author Connor Christian
  */
 public class WeaponFactory {
 
@@ -12,6 +12,8 @@ public class WeaponFactory {
                 return new Sword();
             case "spear":
             	return new Spear();
+            case "simple hammer":
+            	return new SimpleHammer();
             default:
                 throw new IllegalArgumentException("Invalid type");
         }
