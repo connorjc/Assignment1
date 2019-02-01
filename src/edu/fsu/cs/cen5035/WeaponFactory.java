@@ -12,7 +12,7 @@ public class WeaponFactory {
                 return new Sword();
             case "spear":
             	return new Spear();
-            case "simple hammer":
+            case "simpleHammer":
             	return new SimpleHammer();
             case "crazyRandomSword":
             	return new CrazyRandomSword();
